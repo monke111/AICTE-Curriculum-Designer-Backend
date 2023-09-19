@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
-import express,{NextFunction,Request,Response} from 'express';
-
+import express from 'express';
+const usersRoutes = require('./routes/users')
 export const app = express();
 
 app.get('/', (req, res) => {
@@ -9,5 +9,6 @@ app.get('/', (req, res) => {
 }
 );
 
-//undefined port why?
+app.use('/api/users', usersRoutes)
+
 
