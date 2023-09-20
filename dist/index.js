@@ -8,6 +8,7 @@ require("dotenv/config");
 const express_1 = __importDefault(require("express"));
 const usersRoutes = require('./routes/users');
 exports.app = (0, express_1.default)();
+exports.app.use(express_1.default.json());
 exports.app.get('/', (req, res) => {
     res.send('Hello');
 });
